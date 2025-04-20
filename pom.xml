@@ -6,7 +6,29 @@
 
     <groupId>com.ydo4ki</groupId>
     <artifactId>Ctrl-Fallback</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
+
+    <name>Ctrl-Fallback</name>
+    <description>Library for creating bindings to methods that you are not sure are available in your application</description>
+    <url>https://github.com/Y-Sulphuris/Ctrl-Fallback</url>
+    <inceptionYear>2024</inceptionYear>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/Y-Sulphuris/Ctrl-Fallback</url>
+        <connection>scm:git:git://github.com/Y-Sulphuris/Ctrl-Fallback.git</connection>
+    </scm>
+    <developers>
+        <developer>
+            <name>Sulphuris</name>
+            <email>ydo4ki@gmail.com</email>
+        </developer>
+    </developers>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -14,4 +36,61 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.7.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

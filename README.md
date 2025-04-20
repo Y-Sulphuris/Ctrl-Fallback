@@ -1,4 +1,6 @@
 # Ctrl-Fallback
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Library to quick search for methodhandles if you are not sure that the method will be in your application at launch 
 (mostly for internal jdk api)
 ***
@@ -44,3 +46,22 @@ private static final MethodHandle caller = MethodSequence.of(MethodType.methodTy
 ```
 
 *For more details see javadoc*
+
+
+## Installation
+
+### Maven
+
+```xml
+<dependency>
+    <groupId>com.ydo4ki</groupId>
+    <artifactId>Ctrl-Fallback</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+### Gradle
+
+```groovy
+implementation 'com.ydo4ki:Ctrl-Fallback:1.0.0'
+```
